@@ -76,7 +76,7 @@ python /Users/ユーザーネーム/Desktop/mission_clocke_MT.py
 最後まで読んでいただきありがとうございます。今回はtkinterとPythonを使用してアプリケーションを作ったのですが、DjangoとPythonを用いたWebアプリケーションを開発していきたいと考えています。
 
 ## 派生アプリ(API版)
-MissionClock_V1：https://github.com/N-Necoze/MissionClock_V1
+MissionClock_V1：https://github.com/N-Necoze/MissionClock_V1-
 
 ## 参考文献
 Python HP：https://docs.python.org/ja/3/library/tkinter.html <br>
