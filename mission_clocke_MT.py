@@ -6,11 +6,11 @@ import datetime
 # =========== 期限入力(変更部分) ===========
 kigen_name_1 = '学士梗概集提出期限'
 text_1 = "Deadline For Submitting Bachelor's Abstracts"
-kigen_time_1 = '2022/1/27,16:30'
+kigen_time_1 = '2022/3/6,19:4'
 
 kigen_name_2 = '学士論文提出期限'
 text_2 = "Deadline For Submission Of Bachelor's Papers"
-kigen_time_2 = '2022/2/7,16:30'
+kigen_time_2 = '2022/4/7,16:30'
 # ========================================
 
 kigen_1 = kigen_time_1.split(',')[0]
