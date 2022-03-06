@@ -71,9 +71,9 @@ class Application(tk.Frame):
         self.wt1.grid(row=1, column=1, sticky="news")
         # [期限時刻表示_1]
         self.wt1_1 = Label(self,
-                         bg="black",
-                         font=("DSEG7 Classic", 80, "bold"),
-                         fg="#FF9933")
+                           bg="black",
+                           font=("DSEG7 Classic", 80, "bold"),
+                           fg="#FF9933")
         self.wt1_1.grid(row=1, column=2, padx=(0, 300), sticky="news")
         # [英語表記]
         self.Countdown_UN_1 = Label(self,
@@ -109,11 +109,14 @@ class Application(tk.Frame):
                                       bg="black",
                                       font=(('ToppanBunkyuMidashi'
                                              'MinchoStdN-ExtraBold'),
-                                             60,
-                                             "bold"),
+                                            60,
+                                            "bold"),
                                       text=kigen_name_2,
                                       fg="#FF9933")
-        self.Countdown_time_2.grid(row=4, column=0, padx=(0, 50), sticky="news")
+        self.Countdown_time_2.grid(row=4,
+                                   column=0,
+                                   padx=(0, 50),
+                                   sticky="news")
         # [期限日付表示_2]
         self.wt2 = Label(self,
                          bg="black",
@@ -158,11 +161,14 @@ class Application(tk.Frame):
                                       bg="black",
                                       font=(('ToppanBunkyuMidashi'
                                              'MinchoStdN-ExtraBold'),
-                                             60,
-                                             "bold"),
+                                            60,
+                                            "bold"),
                                       text="日本標準時",
                                       fg="#FF9933")
-        self.Countdown_time_3.grid(row=10, column=0, padx=(0, 120), sticky="news")
+        self.Countdown_time_3.grid(row=10,
+                                   column=0,
+                                   padx=(0, 120),
+                                   sticky="news")
         # [期限時刻表示]
         self.wt3 = Label(self,
                          bg="black",
@@ -180,17 +186,20 @@ class Application(tk.Frame):
                                     font=("", 30),
                                     text="Japan Standard Time",
                                     fg="#FF9933")
-        self.Countdown_UN_3.grid(row=11, column=0, padx=(0, 120), sticky="news")
-        
+        self.Countdown_UN_3.grid(row=11,
+                                 column=0,
+                                 padx=(0, 120),
+                                 sticky="news")
         master.after(50, self.update)
+
     def update(self):
-    # Countdown_setup
+        # Countdown_setup
         today = datetime.datetime.now()
-        time = datetime.datetime.now()
-        
         # Target_Time
-        target_day_1 = datetime.datetime.strptime(date1_t2, '%Y/%m/%d %H:%M:%S')
-        target_time_1 = datetime.datetime.strptime(date1_t2, '%Y/%m/%d %H:%M:%S')
+        target_day_1 = (datetime.datetime.
+                        strptime(date1_t2, '%Y/%m/%d %H:%M:%S'))
+        target_time_1 = (datetime.datetime.
+                         strptime(date1_t2, '%Y/%m/%d %H:%M:%S'))
         if today > target_day_1:
             self.wt1.configure(text=("%s" % 0))
             self.wt1_1.configure(text=("%s:%s:%s" % (0, 0, 0)))
@@ -204,10 +213,13 @@ class Application(tk.Frame):
             second_1 = int((secs_time_1 % 60))
             minut_1 = int((secs_time_1 / 60) % 60)
             hour_1 = int((secs_time_1 / 3600))
-            self.wt1_1.configure(text=("%s:%s:%s" % (hour_1, minut_1, second_1)))
+            (self.wt1_1.
+             configure(text=("%s:%s:%s" % (hour_1, minut_1, second_1))))
         # Target_Time
-        target_day_2 = datetime.datetime.strptime(date2_t2, '%Y/%m/%d %H:%M:%S')
-        target_time_2 = datetime.datetime.strptime(date2_t2, '%Y/%m/%d %H:%M:%S')
+        target_day_2 = (datetime.datetime.
+                        strptime(date2_t2, '%Y/%m/%d %H:%M:%S'))
+        target_time_2 = (datetime.datetime.
+                         strptime(date2_t2, '%Y/%m/%d %H:%M:%S'))
         if today > target_day_2:
             self.wt2.configure(text=("%s" % 0))
             self.wt2_1.configure(text=("%s:%s:%s" % (0, 0, 0)))
@@ -221,18 +233,21 @@ class Application(tk.Frame):
             second_2 = int((secs_time_2 % 60))
             minut_2 = int((secs_time_2 / 60) % 60)
             hour_2 = int((secs_time_2 / 3600))
-            self.wt2_1.configure(text=("%s:%s:%s" % (hour_2, minut_2, second_2)))
+            (self.wt2_1.
+             configure(text=("%s:%s:%s" % (hour_2, minut_2, second_2))))
         # Live
         self.wt3.configure(text=today.strftime("%m-%d"))
         self.wt3_1.configure(text=today.strftime("%H:%M:%S"))
         # 1秒後に再表示
         self.master.after(1000, self.update)
-        
+
+
 def main():
     root = tk.Tk()
     app = Application(master=root)
     app.config(bg="black")
     app.mainloop()
+
 
 if __name__ == "__main__":
     main()
